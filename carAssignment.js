@@ -85,8 +85,4 @@ var car {
 	var gasUsed = {
 		
 	}
-
-\\ made some changes to test swapping between computers;
-\\ and test going the other way;
-
 }
