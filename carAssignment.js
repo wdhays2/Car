@@ -8,15 +8,16 @@ var tire = {
 	},
 
 	adjustPressure: function(addOrRemoveAir){
+		console.log(addOrRemoveAir);
 		if ((this.currentPressure + addOrRemoveAir) < this.minPressure) {
-			alert("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
+			console.log("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
 		} 
 		else if ((this.currentPressure + addOrRemoveAir) > this.maxPressure) {
-			alert("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
+			console.log("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
 		} 
 		else {
 			this.currentPressure += addOrRemoveAir;
-			alert("The tire is properly inflated to " + this.currentPressure + "psi.");
+			console.log("The tire is properly inflated to " + this.currentPressure + "psi.");
 		}
 	}
 };
@@ -28,48 +29,64 @@ var car = {
 	currentSpeed: 0,
 	wheels: {leftFront: Object.create(tire), rightFront: Object.create(tire), leftRear: Object.create(tire), rightRear: Object.create(tire)},
 
+	maxAirInTires: function(){
+		// this.wheels.leftFront.adjustPressure(this.wheels.leftFront.maxPressure - this.wheels.leftFront.checkPressure());
+		// this.wheels.rightFront.adjustPressure(this.wheels.rightFront.maxPressure - this.wheels.rightFront.checkPressure());
+		// this.wheels.leftRear.adjustPressure(this.wheels.leftRear.maxPressure - this.wheels.leftRear.checkPressure());
+		// this.wheels.rightRear.adjustPressure(this.wheels.rightRear.maxPressure - this.wheels.rightRear.checkPressure());
+
+
+		$.each( this.wheels, function( tirePosition, carTire ) {
+			console.log(tirePosition);
+			carTire.adjustPressure(carTire.maxPressure - carTire.checkPressure());
+		});
+
+
+	},
+
 	checkGas: function(){
-		return gasInTank;
+		return this.gasInTank;
 	},
 
 	addGas: function(gallons){
-		if ((gasInTank + gallons) > sizeGasTank) {
-			alert("The tank only holds " + sizeGasTank + " gallons.");
+		if ((this.gasInTank + gallons) > this.sizeGasTank) {
+			console.log("The tank only holds " + this.sizeGasTank + " gallons.");
 		} 
-		else if ((gasInTank + gallons) <= 0.25*sizeGasTank){ 
-			gasInTank += gallons;
-			alert("The tank is almost empty.");
+		else if ((this.gasInTank + gallons) <= 0.25*this.sizeGasTank){ 
+			this.gasInTank += gallons;
+			console.log("The tank is almost empty.");
 		}
-		else if ((gasInTank + gallons) >= 0.95*sizeGasTank){
-			gasInTank += gallons;
-			alert("The tank is full.");
+		else if ((this.gasInTank + gallons) >= 0.95*this.sizeGasTank){
+			this.gasInTank += gallons;
+			console.log("The tank is full.");
 		}
 		else {	
-			gasInTank += gallons;		
-			alert("Did you want to fill it up? There are " + gasInTank + " gallons in the tank.");
+			this.gasInTank += gallons;		
+			console.log("Did you want to fill it up? There are " + this.gasInTank + " gallons in the tank.");
 		}
 	},
 
 	speedUp: function(speed){
-		if ((currentSpeed + speed) > maxSpeed){
-			alert("Damnit Jim, I'm giving it all I've got.\nThat would be " + (currentSpeed + speed) + "mph.\n");
+		if ((this.currentSpeed + speed) > this.maxSpeed){
+			console.log("Damnit Jim, I'm giving it all I've got.\nThat would be " + (this.currentSpeed + speed) + "mph.\n");
 		} 
 		else {
-			currentSpeed += speed;
-			return currentSpeed;
+			this.currentSpeed += speed;
+			return this.currentSpeed;
 			// prompt(distance){
 			// 	"What distance will we be traveling, at this speed?"
 			// }
 		}
 	},
 	slowDown: function(speed){
-		if ((currentSpeed - speed) < minSpeed){
-			alert("I can't go " + (currentSpeed - speed) + "mph.");
+		if ((this.currentSpeed - speed) < this.minSpeed){
+			console.log("I can't go " + (this.currentSpeed - speed) + "mph.");
 		}
 		else{
-			currentSpeed -= speed; 
-			return currentSpeed;
-			if (currentSpeed > 0){
+			this.currentSpeed -= speed; 
+			
+			if (this.currentSpeed >= 0){
+				return this.currentSpeed;
 				// prompt(distance){
 				// 	"What distance will we be traveling, at this speed?"
 				// }
@@ -77,7 +94,7 @@ var car = {
 		}
 	},
 	checkSpeed: function(){
-		return currentSpeed;
+		return this.currentSpeed;
 	},
 	gasUsed: 0
 }
