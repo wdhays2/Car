@@ -60,6 +60,9 @@ var car {
 		else {
 			currentSpeed += speed;
 			return currentSpeed;
+			prompt(distance){
+				"What distance will we be traveling at this speed?"
+			}
 		}
 	},
 	slowDown: function (speed){
@@ -69,8 +72,18 @@ var car {
 		else{
 			currentSpeed -= speed; 
 			return currentSpeed;
+			if (currentSpeed > 0){
+				prompt(distance){
+					"What distance will we be traveling at this speed?"
+				}
+			}
 		}
 	},
-
+	checkSpeed: function (){
+		return currentSpeed;
+	},
+	var gasUsed = {
+		
+	}
 
 }
