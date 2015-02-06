@@ -1,0 +1,12 @@
+/*<style>
+img {
+    opacity: 0.4;
+    filter: alpha(opacity=40); /* For IE8 and earlier */
+}
+/*</style>
+<img src="1978transamsurvivor1108.jpg" width="549" height="286" alt="1978transamsurvivor1108.jpg">*/
+<style>
+body {
+    background-image: img src="1978transamsurvivor1108.jpg";
+}
+</style>
