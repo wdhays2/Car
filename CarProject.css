@@ -1,12 +1,13 @@
-/*<style>
-img {
-    opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
-}
-/*</style>
-<img src="1978transamsurvivor1108.jpg" width="549" height="286" alt="1978transamsurvivor1108.jpg">*/
-<style>
 body {
-    background-image: img src="1978transamsurvivor1108.jpg";
+    background-image: url("1978transamsurvivor1108.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+
 }
-</style>
+div {
+    border: 2px solid #a1a1a1;
+    padding: 10px 40px; 
+    float: left;
+    width: 200px;
+    border-radius: 25px;
+}
