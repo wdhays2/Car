@@ -2,12 +2,11 @@ body {
     background-image: url("1978transamsurvivor1108.jpg");
     background-size: 100%;
     background-repeat: no-repeat;
-
 }
 div {
     border: 2px solid #a1a1a1;
     padding: 10px 40px; 
     float: left;
-    width: 200px;
-    border-radius: 25px;
+    width: 23%;
+    border-radius: 20px;
 }
