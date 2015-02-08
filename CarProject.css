@@ -21,3 +21,7 @@ div.infobox {
     border-radius: 20px;
     color: #000000;
 }
+
+.warning {
+  color: #ff0000;
+}

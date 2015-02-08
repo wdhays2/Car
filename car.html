@@ -4,6 +4,7 @@
   <link rel="stylesheet" type="text/css" href="CarProject.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
   <script src="carAssignment.js"></script>
+  <script src="controller.js"></script>
 </head>
 <body>
   <div class="background"></div>
@@ -13,10 +14,24 @@
   <div class="infobox">
     <h3>Tires</h3>
     <ul>
-      <li>Left Front Tire: 35 PSI</li>
-      <li>Right Front Tire: 35 PSI</li>
-      <li>Left Rear Tire: 35 PSI</li>
-     <li>Right Rear Tire: 35 PSI</li>
+      <li>
+        Left Front Tire: <span id="leftFront">0</span> PSI     
+        <a href="javascript:void(0)" onclick="incPress('leftFront')">+ PSI</a>
+        <a href="javascript:void(0)" onclick="decPress('leftFront')">- PSI</a>
+      </li>
+      
+      <li>Right Front Tire: <span id="rightFront">0</span> PSI
+        <a href="javascript:void(0)" onclick="incPress('rightFront')">+ PSI</a>
+        <a href="javascript:void(0)" onclick="decPress('rightFront')">- PSI</a>
+      </li>
+      <li>Left Rear Tire: <span id="leftRear">0</span> PSI
+        <a href="javascript:void(0)" onclick="incPress('leftRear')">+ PSI</a>
+        <a href="javascript:void(0)" onclick="decPress('leftRear')">- PSI</a>
+      </li> 
+     <li>Right Rear Tire: <span id="rightRear">0</span> PSI
+        <a href="javascript:void(0)" onclick="incPress('rightRear')">+ PSI</a>
+        <a href="javascript:void(0)" onclick="decPress('rightRear')">- PSI</a>
+      </li>
     </ul>  
   </div>
   <div class="infobox">

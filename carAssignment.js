@@ -9,15 +9,20 @@ var tire = {
 
 	adjustPressure: function(addOrRemoveAir){
 		console.log(addOrRemoveAir);
-		if ((this.currentPressure + addOrRemoveAir) < this.minPressure) {
-			console.log("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
+		if ((this.currentPressure + addOrRemoveAir) < 0) {
+			console.log("PSI is already at 0");
 		} 
 		else if ((this.currentPressure + addOrRemoveAir) > this.maxPressure) {
-			console.log("That would give you " + (this.currentPressure + addOrRemoveAir) + "psi.");
+			console.log("PSI is already at max pressure");
 		} 
 		else {
 			this.currentPressure += addOrRemoveAir;
-			console.log("The tire is properly inflated to " + this.currentPressure + "psi.");
+			if (this.currentPressure < this.minPressure) {
+			  console.log("That gives you " + this.currentPressure + "psi.");
+			}
+			else {
+				console.log("The tire is properly inflated to " + this.currentPressure + "psi.");
+			}
 		}
 	}
 };
