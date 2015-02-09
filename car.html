@@ -15,22 +15,26 @@
     <h3>Tires</h3>
     <ul>
       <li>
-        Left Front Tire: <span id="leftFront">0</span> PSI     
-        <a href="javascript:void(0)" onclick="incPress('leftFront')">+ PSI</a>
-        <a href="javascript:void(0)" onclick="decPress('leftFront')">- PSI</a>
+        Left Front: <span id="leftFront">0</span> PSI
+        <br>     
+        <button type="button" onclick="incPress('leftFront')">Raise</button>
+        <button type="button" onclick="decPress('leftFront')">Lower</button>
       </li>
       
-      <li>Right Front Tire: <span id="rightFront">0</span> PSI
-        <a href="javascript:void(0)" onclick="incPress('rightFront')">+ PSI</a>
-        <a href="javascript:void(0)" onclick="decPress('rightFront')">- PSI</a>
+      <li>Right Front: <span id="rightFront">0</span> PSI
+        <br>
+        <button type="button" onclick="incPress('rightFront')">Raise</button>
+        <button type="button" onclick="decPress('rightFront')">Lower</button>
       </li>
-      <li>Left Rear Tire: <span id="leftRear">0</span> PSI
-        <a href="javascript:void(0)" onclick="incPress('leftRear')">+ PSI</a>
-        <a href="javascript:void(0)" onclick="decPress('leftRear')">- PSI</a>
+      <li>Left Rear: <span id="leftRear">0</span> PSI
+        <br>
+        <button type="button" onclick="incPress('leftRear')">Raise</button>
+        <button type="button" onclick="decPress('leftRear')">Lower</button>
       </li> 
-     <li>Right Rear Tire: <span id="rightRear">0</span> PSI
-        <a href="javascript:void(0)" onclick="incPress('rightRear')">+ PSI</a>
-        <a href="javascript:void(0)" onclick="decPress('rightRear')">- PSI</a>
+     <li>Right Rear: <span id="rightRear">0</span> PSI
+        <br>
+        <button type="button" onclick="incPress('rightRear')">Raise</button>
+        <button type="button" onclick="decPress('rightRear')">Lower</button>
       </li>
     </ul>  
   </div>
@@ -39,10 +43,9 @@
     <ul>
       <li>
         Gas Level: <span id="gas">0</span> Gallons
-        <a href="javascript:void(0)" onclick="gasUpCar()">  Add 1 Gallon</a>
         <br>
-        <br>
-        <a href="javascript:void(0)" onclick="fillUpTank()">  Fill'er up</a>
+        <button type="button" onclick="gasUpCar()">  Add 1 Gal.</button>
+        <button type="button" onclick="fillUpTank()">  Fill'er up</button>
       </li>
     </ul>  
   </div>
@@ -51,6 +54,10 @@
     <ul>
       <li>
         Current Speed: <span id="speed">0</span> MPH
+        <br>
+        <button type="button" onclick="addSpeed()">  Add Speed</button>
+        <button type="button" onclick="decSpeed()">  Slow Down</button>
+        <br>
       </li>
     </ul>  
   </div>

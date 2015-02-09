@@ -43,6 +43,16 @@ function displaySpeed(){
   $("#speed").html(speed);
 }
 
+function addSpeed(){
+  car.speedUp(5);
+  updateView();
+}
+
+function decSpeed(){
+  car.slowDown(5);
+  updateView();
+}
+
 function displayAirPress(){
   var wheelLocations = ["leftFront", "rightFront", "leftRear", "rightRear"];
   $.each(wheelLocations, function( index, wheelLoc ) {
