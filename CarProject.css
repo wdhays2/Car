@@ -13,7 +13,7 @@ div.background {
     opacity: 0.35;
     z-index: -1;
 }
-div.infobox {
+div.infoBox {
     border: 2px solid #a1a1a1;
     padding: 10px 40px; 
     float: left;

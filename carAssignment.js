@@ -61,7 +61,7 @@ var car = {
 			this.gasInTank += gallons;
 			console.log("The tank is almost empty.");
 		}
-		else if ((this.gasInTank + gallons) >= 0.95*this.sizeGasTank){
+		else if ((this.gasInTank + gallons) >= 0.975*this.sizeGasTank){
 			this.gasInTank += gallons;
 			console.log("The tank is full.");
 		}

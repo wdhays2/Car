@@ -11,7 +11,7 @@
 
   <h1>Car Project</h1>
 
-  <div class="infobox">
+  <div class="infoBox">
     <h3>Tires</h3>
     <ul>
       <li>
@@ -34,16 +34,24 @@
       </li>
     </ul>  
   </div>
-  <div class="infobox">
+  <div class="infoBox">
     <h3>Gas</h3>
     <ul>
-      <li>7 Gallons</li>
+      <li>
+        Gas Level: <span id="gas">0</span> Gallons
+        <a href="javascript:void(0)" onclick="gasUpCar()">  Add 1 Gallon</a>
+        <br>
+        <br>
+        <a href="javascript:void(0)" onclick="fillUpTank()">  Fill'er up</a>
+      </li>
     </ul>  
   </div>
-  <div class="infobox">
+  <div class="infoBox">
     <h3>Speed</h3>
     <ul>
-      <li>0 MPH</li>
+      <li>
+        Current Speed: <span id="speed">0</span> MPH
+      </li>
     </ul>  
   </div>
 </body>
