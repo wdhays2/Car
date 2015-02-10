@@ -71,35 +71,54 @@ var car = {
 		}
 	},
 
-	speedUp: function(speed){
-		if ((this.currentSpeed + speed) > this.maxSpeed){
-			console.log("Damnit Jim, I'm giving it all I've got.\nThat would be " + (this.currentSpeed + speed) + "mph.\n");
+	speedUp: function(){
+			var speed = prompt(
+				"How fast would you like to go?");
+		if (speed > this.maxSpeed){
+			console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.\n");
 		} 
 		else {
-			this.currentSpeed += speed;
+			
+			var distance = prompt(
+				"What distance will we be traveling, at this speed?");
+			var gasBurned = (distance/this.cityMPG);
+			if (gasBurned>this.gasInTank){
+				alert("We dont have enough gas for that.")}
+				else {
+			this.currentSpeed = speed;
+			this.gasInTank -= gasBurned;
 			return this.currentSpeed;
-			// prompt(distance){
-			// 	"What distance will we be traveling, at this speed?"
-			// }
-		}
+			};
+		};
 	},
-	slowDown: function(speed){
-		if ((this.currentSpeed - speed) < this.minSpeed){
-			console.log("I can't go " + (this.currentSpeed - speed) + "mph.");
+	slowDown: function(){
+				var speed = prompt(
+				"What would you like the speed adjusted to?");
+		if (speed < this.minSpeed){
+			console.log("I can't go " + (speed) + "mph.");
+		}
+
+		else if 
+			(speed == 0){console.log("Stopped.");
+			this.currentSpeed = speed;
+			return this.currentSpeed;
 		}
 		else{
-			this.currentSpeed -= speed; 
-			
-			if (this.currentSpeed >= 0){
-				return this.currentSpeed;
-				// prompt(distance){
-				// 	"What distance will we be traveling, at this speed?"
-				// }
-			}
-		}
+			var distance = prompt(
+				"What distance will we be traveling, at this speed?");
+			var gasBurned = (distance/this.cityMPG);
+			if (gasBurned > this.gasInTank){
+				alert("We dont have enough gas for that.")}
+				else {
+			this.currentSpeed = speed;
+			this.gasInTank -= gasBurned;
+			return this.currentSpeed;
+		};
+	};
 	},
 	checkSpeed: function(){
 		return this.currentSpeed;
 	},
 	gasUsed: 0
 }
+
