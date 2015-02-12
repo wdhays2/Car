@@ -10,18 +10,18 @@ var tire = {
 	adjustPressure: function(addOrRemoveAir){
 		console.log(addOrRemoveAir);
 		if ((this.currentPressure + addOrRemoveAir) < 0) {
-			console.log("PSI is already at 0");
+			console.log("The tire is already at 0");
 		} 
 		else if ((this.currentPressure + addOrRemoveAir) > this.maxPressure) {
-			console.log("PSI is already at max pressure");
+			console.log("The tire is already at max pressure");
 		} 
 		else {
 			this.currentPressure += addOrRemoveAir;
 			if (this.currentPressure < this.minPressure) {
-			  console.log("That gives you " + this.currentPressure + "psi.");
+			  console.log("That gives you " + this.currentPressure + "PSI.");
 			}
 			else {
-				console.log("The tire is properly inflated to " + this.currentPressure + "psi.");
+				console.log("The tire is properly inflated to " + this.currentPressure + "PSI.");
 			}
 		}
 	}
@@ -72,15 +72,13 @@ var car = {
 	},
 
 	speedUp: function(){
-			var speed = prompt(
-				"How fast would you like to go?");
 		if (speed > this.maxSpeed){
-			console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.\n");
+			console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.");
 		} 
+		else if (speed !> this.currentSpeed){
+			console.log("I thought you wanted to speed up.");
+		}
 		else {
-			
-			var distance = prompt(
-				"What distance will we be traveling, at this speed?");
 			var gasBurned = (distance/this.cityMPG);
 			if (gasBurned>this.gasInTank){
 				alert("We dont have enough gas for that.")}
@@ -92,20 +90,21 @@ var car = {
 		};
 	},
 	slowDown: function(){
-				var speed = prompt(
-				"What would you like the speed adjusted to?");
 		if (speed < this.minSpeed){
 			console.log("I can't go " + (speed) + "mph.");
 		}
-
-		else if 
-			(speed == 0){console.log("Stopped.");
+		else if {
+			(speed !< this.currentSpeed){
+				console.log("I thought you wanted to slow down.");
+			};
+		}
+		else if
+			(speed == 0){
+				console.log("Stopped.");
 			this.currentSpeed = speed;
 			return this.currentSpeed;
 		}
 		else{
-			var distance = prompt(
-				"What distance will we be traveling, at this speed?");
 			var gasBurned = (distance/this.cityMPG);
 			if (gasBurned > this.gasInTank){
 				alert("We dont have enough gas for that.")}
@@ -113,12 +112,11 @@ var car = {
 			this.currentSpeed = speed;
 			this.gasInTank -= gasBurned;
 			return this.currentSpeed;
+			};
 		};
-	};
 	},
 	checkSpeed: function(){
 		return this.currentSpeed;
 	},
-	gasUsed: 0
 }
 

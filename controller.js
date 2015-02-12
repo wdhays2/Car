@@ -44,14 +44,57 @@ function displaySpeed(){
 }
 
 function addSpeed(){
-  car.speedUp(5);
+  car.speedUp();
   updateView();
+  var speed = prompt(
+        "How fast would you like to go?");
+
+var distance = prompt(
+        "What distance will we be traveling, at this speed?");
+      var gasBurned = (distance/this.cityMPG);
+  if (speed > this.maxSpeed){
+      console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.\n");
+    } 
+    else {
+      
+      
+      if (gasBurned>this.gasInTank){
+        alert("We dont have enough gas for that.")}
+        else {
+      this.currentSpeed = speed;
+      this.gasInTank -= gasBurned;
+      return this.currentSpeed;
+    };
+  };
 }
 
 function decSpeed(){
-  car.slowDown(5);
+  car.slowDown();
   updateView();
 }
+var speed = prompt(
+        "What would you like the speed adjusted to?");
+
+var distance = prompt(
+        "What distance will we be traveling, at this speed?");
+if (speed < this.minSpeed){
+      console.log("I can't go " + (speed) + "mph.");
+    }
+
+    else if 
+      (speed == 0){console.log("Stopped.");
+      this.currentSpeed = speed;
+      return this.currentSpeed;
+    }
+    else{
+      
+      var gasBurned = (distance/this.cityMPG);
+      if (gasBurned > this.gasInTank){
+        alert("We dont have enough gas for that.")}
+        else {
+      this.currentSpeed = speed;
+      this.gasInTank -= gasBurned;
+
 
 function displayAirPress(){
   var wheelLocations = ["leftFront", "rightFront", "leftRear", "rightRear"];
