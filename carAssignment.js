@@ -71,52 +71,60 @@ var car = {
 		}
 	},
 
-	speedUp: function(){
-		if (speed > this.maxSpeed){
+	speedUp: function(speed){
+		if (speed == NaN){
+			console.log("I'm looking for a number here.");
+		}
+		else if (speed > this.maxSpeed){
 			console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.");
 		} 
-		else if (speed !> this.currentSpeed){
+		else if (speed <= this.currentSpeed){
 			console.log("I thought you wanted to speed up.");
 		}
 		else {
-			var gasBurned = (distance/this.cityMPG);
-			if (gasBurned>this.gasInTank){
-				alert("We dont have enough gas for that.")}
-				else {
 			this.currentSpeed = speed;
-			this.gasInTank -= gasBurned;
-			return this.currentSpeed;
-			};
-		};
+		}
 	},
-	slowDown: function(){
-		if (speed < this.minSpeed){
+
+	slowDown: function(speed){
+		if (speed = NaN){
+			console.log("I'm looking for a number here.");
+		}
+		else if (speed < this.minSpeed){
 			console.log("I can't go " + (speed) + "mph.");
 		}
-		else if {
-			(speed !< this.currentSpeed){
+		else if (speed >= this.currentSpeed){
 				console.log("I thought you wanted to slow down.");
-			};
 		}
-		else if
-			(speed == 0){
-				console.log("Stopped.");
+		else if	(speed == 0){
+			console.log("Stopped.");
 			this.currentSpeed = speed;
-			return this.currentSpeed;
 		}
 		else{
-			var gasBurned = (distance/this.cityMPG);
-			if (gasBurned > this.gasInTank){
-				alert("We dont have enough gas for that.")}
-				else {
 			this.currentSpeed = speed;
-			this.gasInTank -= gasBurned;
-			return this.currentSpeed;
-			};
-		};
+		}
 	},
+
 	checkSpeed: function(){
 		return this.currentSpeed;
 	},
-}
 
+	move: function(distance){
+		if (distance = NaN){
+			console.log("I'm looking for a number here.");
+		}
+		else {
+		var efficiency = 0;
+		if (this.currentSpeed < 45){efficiency = this.cityMPG}
+		else if (this.currentSpeed < 66){efficiency = this.hwyMPG}
+		else if (this.currentSpeed < 81){efficiency = this.speedingMPG}
+		else {efficiency = this.racingMPG};
+    var gasBurned = (distance/efficiency);    
+    if (gasBurned > this.gasInTank){
+      alert("We dont have enough gas for that.")}
+    	else {
+     	this.gasInTank -= gasBurned;
+    	}
+		}
+	}
+}

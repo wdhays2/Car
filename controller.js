@@ -33,7 +33,8 @@ function fillUpTank(){
 }
 
 function displayGas(){
-   var gas = car.checkGas();
+  var gas = car.checkGas();
+  gas = parseFloat(gas).toFixed(2);
   $("#gas").html(gas);
 
 }
@@ -44,57 +45,26 @@ function displaySpeed(){
 }
 
 function addSpeed(){
-  car.speedUp();
+  var speed = prompt("How fast would you like to go?");
+  car.speedUp(speed);
   updateView();
-  var speed = prompt(
-        "How fast would you like to go?");
-
-var distance = prompt(
-        "What distance will we be traveling, at this speed?");
-      var gasBurned = (distance/this.cityMPG);
-  if (speed > this.maxSpeed){
-      console.log("Damnit Jim, I'm giving it all I've got.\nMy top speed is " + (this.maxSpeed) + " MPH.\n");
-    } 
-    else {
-      
-      
-      if (gasBurned>this.gasInTank){
-        alert("We dont have enough gas for that.")}
-        else {
-      this.currentSpeed = speed;
-      this.gasInTank -= gasBurned;
-      return this.currentSpeed;
-    };
-  };
+  this.currentSpeed = speed;
+  return this.currentSpeed;
 }
 
 function decSpeed(){
-  car.slowDown();
+  var speed = prompt("What would you like the speed adjusted to?");
+  car.slowDown(speed);
+  updateView();
+  this.currentSpeed = speed;
+  return this.currentSpeed;
+}
+
+function go(){
+  var distance = prompt("What distance will we be traveling, at this speed?");
+  car.move(distance);
   updateView();
 }
-var speed = prompt(
-        "What would you like the speed adjusted to?");
-
-var distance = prompt(
-        "What distance will we be traveling, at this speed?");
-if (speed < this.minSpeed){
-      console.log("I can't go " + (speed) + "mph.");
-    }
-
-    else if 
-      (speed == 0){console.log("Stopped.");
-      this.currentSpeed = speed;
-      return this.currentSpeed;
-    }
-    else{
-      
-      var gasBurned = (distance/this.cityMPG);
-      if (gasBurned > this.gasInTank){
-        alert("We dont have enough gas for that.")}
-        else {
-      this.currentSpeed = speed;
-      this.gasInTank -= gasBurned;
-
 
 function displayAirPress(){
   var wheelLocations = ["leftFront", "rightFront", "leftRear", "rightRear"];
