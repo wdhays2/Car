@@ -72,7 +72,7 @@ var car = {
 	},
 
 	speedUp: function(speed){
-		if (speed == NaN){
+		if (isNaN(speed)){
 			console.log("I'm looking for a number here.");
 		}
 		else if (speed > this.maxSpeed){
@@ -87,18 +87,18 @@ var car = {
 	},
 
 	slowDown: function(speed){
-		if (speed = NaN){
+		if (isNaN(speed)){
 			console.log("I'm looking for a number here.");
 		}
 		else if (speed < this.minSpeed){
 			console.log("I can't go " + (speed) + "mph.");
 		}
-		else if (speed >= this.currentSpeed){
-				console.log("I thought you wanted to slow down.");
-		}
 		else if	(speed == 0){
 			console.log("Stopped.");
 			this.currentSpeed = speed;
+		}
+		else if (speed >= this.currentSpeed){
+				console.log("I thought you wanted to slow down.");
 		}
 		else{
 			this.currentSpeed = speed;
@@ -110,7 +110,7 @@ var car = {
 	},
 
 	move: function(distance){
-		if (distance = NaN){
+		if (isNaN(distance)){
 			console.log("I'm looking for a number here.");
 		}
 		else {
@@ -119,12 +119,13 @@ var car = {
 		else if (this.currentSpeed < 66){efficiency = this.hwyMPG}
 		else if (this.currentSpeed < 81){efficiency = this.speedingMPG}
 		else {efficiency = this.racingMPG};
-    var gasBurned = (distance/efficiency);    
-    if (gasBurned > this.gasInTank){
-      alert("We dont have enough gas for that.")}
+    	var gasBurned = (distance/efficiency);    
+    	if (gasBurned > this.gasInTank){
+      	alert("We dont have enough gas for that.")}
     	else {
      	this.gasInTank -= gasBurned;
-    	}
+    	
 		}
 	}
+}
 }
