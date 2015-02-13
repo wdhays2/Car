@@ -113,22 +113,22 @@ var car = {
 		if (isNaN(distance)){
 			console.log("I'm looking for a number here.");
 		}
-		else if (speed == 0 || distance == 0){
+		else if (this.currentSpeed == 0 || distance == 0){
 			console.log("Already stopped.");
 		}
 		else {
-		var efficiency = 0;
-		if (this.currentSpeed < 45){efficiency = this.cityMPG}
-		else if (this.currentSpeed < 66){efficiency = this.hwyMPG}
-		else if (this.currentSpeed < 81){efficiency = this.speedingMPG}
-		else {efficiency = this.racingMPG};
-    	var gasBurned = (distance/efficiency);    
-    	if (gasBurned > this.gasInTank){
-      	alert("We dont have enough gas for that.")}
-    	else {
-     	this.gasInTank -= gasBurned;
+			var efficiency = 0;
+			if (this.currentSpeed < 45){efficiency = this.cityMPG}
+			else if (this.currentSpeed < 66){efficiency = this.hwyMPG}
+			else if (this.currentSpeed < 81){efficiency = this.speedingMPG}
+			else {efficiency = this.racingMPG};
+	    var gasBurned = (distance/efficiency);    
+	    if (gasBurned > this.gasInTank){
+	    alert("We dont have enough gas for that.")}
+	    else {
+	    	this.gasInTank -= gasBurned;
     	
+			}
 		}
 	}
-}
 }
