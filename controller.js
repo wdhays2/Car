@@ -69,7 +69,7 @@ function go(){
 function displayAirPress(){
   var wheelLocations = ["leftFront", "rightFront", "leftRear", "rightRear"];
   $.each(wheelLocations, function( index, wheelLoc ) {
-    var wheelLocId = "#"+wheelLoc;
+    var wheelLocId = "#" + wheelLoc;
     var press = car.wheels[wheelLoc].checkPressure();
     $(wheelLocId).html(press);
 

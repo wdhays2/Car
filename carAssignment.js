@@ -113,6 +113,9 @@ var car = {
 		if (isNaN(distance)){
 			console.log("I'm looking for a number here.");
 		}
+		else if (speed == 0 || distance == 0){
+			console.log("Already stopped.");
+		}
 		else {
 		var efficiency = 0;
 		if (this.currentSpeed < 45){efficiency = this.cityMPG}
