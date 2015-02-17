@@ -10,18 +10,17 @@ div.background {
     right: 0;
     bottom: 0: 
     left: 0;
-    opacity: 0.35;
+    opacity: .9;
     z-index: -1;
 }
 div.infoBox {
-    border: 2px solid #a1a1a1;
     padding: 10px 40px; 
     float: left;
-    width: 23%;
-    border-radius: 20px;
-    color: #000000;
+    width: 33%;
+    color: #787878;
 }
 
 .warning {
   color: #ff0000;
 }
+

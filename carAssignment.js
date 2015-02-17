@@ -1,7 +1,7 @@
 var tire = {
 	diameter: 26, width: 9, minPressure: 30, maxPressure: 35,
 
-	brand: "B.F. Goodrich", model: "Comp T/A", currentPressure: 22,
+	brand: "B.F. Goodrich", model: "Comp T/A", currentPressure: 29,
 
 	checkPressure: function(){
 		return this.currentPressure;
