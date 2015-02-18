@@ -16,69 +16,80 @@
   <div class="background"></div>
   <div class='navbar navbar-default navbar-static-top'>
     <div class='container'>
+      <div class='navbar-header'>
         <a href='/' class='navbar-brand'>Car Project</a>
-        <ul class='nav navbar-nav navbar-right'>
-          <li><a href='tires.html'>Tires</a></li>
-          <li><a href='gas.html'>Gas</a></li>
-          <li><a href='speed.html'>Speed</a></li>
+        <button type='button' class='navbar-toggle' data-toggle='collapse' data-target='.navbar-collapse'><span class='sr-only'></span><span class='icon-bar'></span><span class='icon-bar'></span><span class='icon-bar'></span></button>
+      </div>
+        <ul class='nav nav-pills navbar-right collapse navbar-collapse'>
+          <li><a href='#tires'>Tires</a></li>
+          <li><a href='#gas'>Gas</a></li>
+          <li><a href='#speed'>Speed</a></li>
         </ul>
     </div>
   </div>
-
-  <div class="infoBox">
-    <div class='col-md-12'>
-      <h4>Tires</h4>
-      <ul class='list-unstyled'>
-        <li>
-          Left Front: <span id="leftFront">0</span> PSI
-          <br>     
-          <button type="button" class="btn btn-info btn-xs" onclick="incPress('leftFront')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
-          <button type="button" class="btn btn-info btn-xs" onclick="decPress('leftFront')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
-        </li>
-        
-        <li>Right Front: <span id="rightFront">0</span> PSI
-          <br>
-          <button type="button" class="btn btn-info btn-xs" onclick="incPress('rightFront')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
-          <button type="button" class="btn btn-info btn-xs" onclick="decPress('rightFront')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
-        </li>
-        <li>Left Rear: <span id="leftRear">0</span> PSI
-          <br>
-          <button type="button" class="btn btn-info btn-xs" onclick="incPress('leftRear')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
-          <button type="button" class="btn btn-info btn-xs" onclick="decPress('leftRear')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
-        </li> 
-       <li>Right Rear: <span id="rightRear">0</span> PSI
-          <br>
-          <button type="button" class="btn btn-info btn-xs" onclick="incPress('rightRear')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
-          <button type="button" class="btn btn-info btn-xs" onclick="decPress('rightRear')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
-        </li>
-      </ul>
-    </div>  
+  <div class='#tires' div role="tabpanel">
+    <div class="infoBox text-center">
+      <div class='col-md-12'>
+        <h4>Tires</h4>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation"><a href="#tires" aria-controls="tires" role="tab" data-toggle="tab"></a>
+            Left Front: <span id="leftFront">0</span> PSI
+            <br>     
+            <button type="button" class="btn btn-info btn-xs" onclick="incPress('leftFront')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="decPress('leftFront')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
+          </li>
+          
+          <li role="presentation"><a href="#tires" aria-controls="tires" role="tab" data-toggle="tab"></a>
+            Right Front: <span id="rightFront">0</span> PSI
+            <br>
+            <button type="button" class="btn btn-info btn-xs" onclick="incPress('rightFront')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="decPress('rightFront')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
+          </li>
+          <li role="presentation"><a href="#tires" aria-controls="tires" role="tab" data-toggle="tab"></a>
+            Left Rear: <span id="leftRear">0</span> PSI
+            <br>
+            <button type="button" class="btn btn-info btn-xs" onclick="incPress('leftRear')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="decPress('leftRear')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
+          </li> 
+         <li role="presentation"><a href="#tires" aria-controls="tires" role="tab" data-toggle="tab"></a>
+          Right Rear: <span id="rightRear">0</span> PSI
+            <br>
+            <button type="button" class="btn btn-info btn-xs" onclick="incPress('rightRear')"><span class="glyphicon glyphicon-chevron-up"></span> Raise</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="decPress('rightRear')"><span class="glyphicon glyphicon-chevron-down"></span> Lower</button>
+          </li>
+        </ul>
+      </div>  
+    </div>
   </div>
-  <div class="infoBox">
-    <div class='col-md-12'>
-      <h4>Gas</h4>
-      <ul class='list-unstyled'>
-        <li>
-          Gas Level: <span id="gas">0</span> Gallons
-          <br>
-          <button type="button" class="btn btn-warning btn-xs" onclick="gasUpCar()"> Add 1 Gal.</button>
-          <button type="button" class="btn btn-warning btn-xs" onclick="fillUpTank()"><span class="glyphicon glyphicon-signal"></span> Fill 'er Up</button>
-        </li>
-      </ul>
-    </div>  
+  <div class='#gas' div role="tabpanel">
+    <div class="infoBox text-center">
+      <div class='col-md-12'>
+        <h4>Gas</h4>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation"><a href="#gas" aria-controls="gas" role="tab" data-toggle="tab"></a>
+            Gas Level: <span id="gas">0</span> Gallons
+            <br>
+            <button type="button" class="btn btn-warning btn-xs" onclick="gasUpCar()"> Add 1 Gal.</button>
+            <button type="button" class="btn btn-warning btn-xs" onclick="fillUpTank()"><span class="glyphicon glyphicon-signal"></span> Fill 'er Up</button>
+          </li>
+        </ul>
+      </div>  
+    </div>
   </div>
-  <div class="infoBox">
-    <div class='col-md-12'>
-      <h4>Speed</h4>
-      <ul class='list-unstyled'>
-        <li>
-          Current Speed: <span id="speed">0</span> MPH
-          <br>
-          <button type="button" class="btn btn-info btn-xs" onclick="addSpeed()"><span class="glyphicon glyphicon-plus"></span> Speed Up To</button>
-          <button type="button" class="btn btn-info btn-xs" onclick="decSpeed()"><span class="glyphicon glyphicon-minus"></span> Slow Down To</button>
-          <button type="button" class="btn btn-success btn-xs" onclick="go()"><span class="glyphicon glyphicon-play"></span> Engage</button>
-        </li>
-      </ul>
+  <div class='#speed' div role="tabpanel">
+    <div class="infoBox text-center">
+      <div class='col-md-12'>
+        <h4>Speed</h4>
+        <ul class="nav nav-tabs" role="tablist">
+          <li role="presentation"><a href="#speed" aria-controls="speed" role="tab" data-toggle="tab"></a>
+            Current Speed: <span id="speed">0</span> MPH
+            <br>
+            <button type="button" class="btn btn-info btn-xs" onclick="addSpeed()"><span class="glyphicon glyphicon-plus"></span> Speed Up To</button>
+            <button type="button" class="btn btn-info btn-xs" onclick="decSpeed()"><span class="glyphicon glyphicon-minus"></span> Slow Down To</button>
+            <button type="button" class="btn btn-success btn-xs" onclick="go()"><span class="glyphicon glyphicon-play"></span> Engage</button>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </body>
