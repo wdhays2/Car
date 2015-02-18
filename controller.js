@@ -1,15 +1,14 @@
 $( document ).ready(function() {
-  updateView();
+  updateView(); 
+  $('#myTab a').click(function (e) {
+    e.preventDefault()
+    $(this).tab('show')
+  })
+
+  $('#myTab a[href="#tires"]').tab('show')
+  $('#myTab a[href="#gas"]').tab('show')
+  $('#myTab a[href="#speed"]').tab('show')
 });
-
-$('#myTab a').click(function (e) {
-  e.preventDefault()
-  $(this).tab('show')
-})
-
-$('#myTab a[href="#tires"]').tab('show')
-$('#myTab a[href="#gas"]').tab('show')
-$('#myTab a[href="#speed"]').tab('show')
 
 function updateView() {
   displayAirPress();
