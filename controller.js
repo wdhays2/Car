@@ -1,8 +1,14 @@
 $( document ).ready(function() {
   updateView(); 
   $('#myTab a').click(function (e) {
-    if ($(this).is(':active')) $(this).tab('hide')
-    else $(this).tab('show')
+    if($(this).parent().hasClass('active')) {
+      console.log("HIDDEN");
+      $("#nothingtablink").tab('show');
+    }
+    else {
+      console.log("SHOW");
+      $(this).tab('show');
+    }
   })
 });
 
