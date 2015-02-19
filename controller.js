@@ -1,13 +1,9 @@
 $( document ).ready(function() {
   updateView(); 
   $('#myTab a').click(function (e) {
-    e.preventDefault()
-    $(this).tab('show')
+    if ($(this).is(':active')) $(this).tab('hide')
+    else $(this).tab('show')
   })
-
-  $('#myTab a[href="#tires"]').tab('show')
-  $('#myTab a[href="#gas"]').tab('show')
-  $('#myTab a[href="#speed"]').tab('show')
 });
 
 function updateView() {
